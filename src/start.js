@@ -86,7 +86,7 @@ export const start = async () => {
         },
         createComment: async (root, args) => {
           const res = await Comments.insert(args)
-          return prepare(await Comments.findOne({_id: res.insertedIds[1]}))
+          return prepare(await Comments.findOne({_id: res.insertedIds[0]})) // insertedIds: [ 5cff662ce946ad3d287f18d3 ]
         },
       },
     }
